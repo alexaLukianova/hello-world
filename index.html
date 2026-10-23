@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#111827" />
+    <title>Neon Tetris</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="game-card" aria-label="Tetris game">
+        <header class="game-header">
+          <div>
+            <p class="eyebrow">Arcade / 01</p>
+            <h1>Neon<span>Tetris</span></h1>
+          </div>
+          <button class="icon-button" id="pauseButton" type="button" aria-label="Pause game">Ⅱ</button>
+        </header>
+
+        <div class="game-layout">
+          <div class="board-wrap">
+            <canvas id="gameCanvas" width="300" height="600" aria-label="Tetris board"></canvas>
+            <div class="overlay" id="overlay">
+              <p class="overlay-kicker">READY?</p>
+              <h2 id="overlayTitle">Press start to play</h2>
+              <button class="primary-button" id="startButton" type="button">Start game</button>
+            </div>
+          </div>
+
+          <aside class="side-panel">
+            <div class="stat-grid">
+              <div class="stat"><span>Score</span><strong id="score">000000</strong></div>
+              <div class="stat"><span>Level</span><strong id="level">01</strong></div>
+              <div class="stat"><span>Lines</span><strong id="lines">000</strong></div>
+            </div>
+
+            <div class="next-card">
+              <div class="section-label">Next piece</div>
+              <canvas id="nextCanvas" width="120" height="100"></canvas>
+            </div>
+
+            <div class="controls-card">
+              <div class="section-label">Controls</div>
+              <p><kbd>←</kbd><kbd>→</kbd> Move</p>
+              <p><kbd>↓</kbd> Soft drop</p>
+              <p><kbd>↑</kbd> Rotate</p>
+              <p><kbd>Space</kbd> Hard drop</p>
+            </div>
+
+            <button class="secondary-button" id="restartButton" type="button">Restart game</button>
+          </aside>
+        </div>
+
+        <div class="mobile-controls" aria-label="Touch controls">
+          <button data-action="left" type="button">←</button>
+          <button data-action="down" type="button">↓</button>
+          <button data-action="rotate" type="button">↻</button>
+          <button data-action="right" type="button">→</button>
+          <button data-action="drop" type="button">Drop</button>
+        </div>
+      </section>
+      <p class="footer-note">Built for one more round.</p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
